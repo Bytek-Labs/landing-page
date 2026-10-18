@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
-import { StructuredData } from "@/components/StructuredData";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { PointerEffects } from "@/components/PointerEffects";
+import { RevealObserver } from "@/components/RevealObserver";
+import { JsonLd, organizationGraph } from "@/components/StructuredData";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -24,7 +28,7 @@ const revealGuard = `(function(d){d.classList.add('js');setTimeout(function(){if
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title,
+  title: { default: title, template: "%s" },
   description,
   applicationName: site.name,
   alternates: { canonical: "/" },
@@ -63,8 +67,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: revealGuard }} />
       </head>
       <body>
-        {children}
-        <StructuredData />
+        <a className="skip" href="#conteudo">Pular para o conteúdo</a>
+        <Header />
+        <main id="conteudo">{children}</main>
+        <Footer />
+        <RevealObserver />
+        <PointerEffects />
+        <JsonLd graph={organizationGraph()} />
       </body>
     </html>
   );

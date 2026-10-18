@@ -23,6 +23,7 @@ pnpm dev --hostname 0.0.0.0     # para abrir pelo celular na mesma rede
 
 - **Textos, serviços, produtos, FAQ e contatos:** `lib/site.ts`
 - **Estágio dos produtos** (linha do tempo nos cards): campo `stage` em `lib/site.ts`
+- **Páginas de serviço** (`/servicos/<slug>/`): conteúdo, título e descrição de cada uma em `lib/service-pages.ts`. Uma página nova entra sozinha no sitemap, no rodapé e nos dados estruturados.
 - **Layout de cada seção:** `components/`
 - **Estilos:** `app/globals.css`
 - **Logo e ícones:** `public/bytek-symbol.png`, `app/icon.png`, `app/apple-icon.png`, `app/opengraph-image.jpg`

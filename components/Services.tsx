@@ -1,3 +1,4 @@
+import { servicePath } from "@/lib/service-pages";
 import { services } from "@/lib/site";
 import { SectionHead } from "./SectionHead";
 
@@ -25,6 +26,10 @@ export function Services() {
               <h3>{s.title}</h3>
               <p>{s.text}</p>
               <p className="service__ex"><span className="mono">exemplo</span>{s.example}</p>
+              <a className="service__link" href={servicePath(s.slug)}>
+                Saiba mais sobre {s.title.toLowerCase()}
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" /></svg>
+              </a>
             </article>
           ))}
         </div>

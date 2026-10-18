@@ -13,12 +13,13 @@ export const site = {
 export const whatsappLink = (text?: string) =>
   `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
+// Links absolutos (/#...) para funcionarem também nas páginas de serviço.
 export const navLinks = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#solucoes", label: "Soluções" },
-  { href: "#produtos", label: "Produtos" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#solucoes", label: "Soluções" },
+  { href: "/#produtos", label: "Produtos" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export const problems = [
@@ -43,24 +44,28 @@ export const problems = [
 export const services = [
   {
     icon: "system",
+    slug: "desenvolvimento-de-sistemas-sob-medida",
     title: "Sistemas sob medida",
     text: "Aplicações web, painéis administrativos, CRMs, plataformas internas e sistemas de gestão adaptados aos processos de cada empresa.",
     example: "Substituir planilhas dispersas por um sistema centralizado para gerenciar clientes e operações.",
   },
   {
     icon: "web",
+    slug: "criacao-de-sites-e-aplicacoes-web",
     title: "Sites e aplicações web",
     text: "Sites institucionais, landing pages e experiências digitais responsivas, com foco em clareza, desempenho, acessibilidade e conversão.",
     example: "Criar a presença digital de uma empresa e facilitar a geração de contatos comerciais.",
   },
   {
     icon: "ai",
+    slug: "automacao-de-processos-e-inteligencia-artificial",
     title: "Automação e inteligência artificial",
     text: "IA integrada aos processos, automação de tarefas repetitivas, assistentes conversacionais e ferramentas conectadas por APIs.",
     example: "Um assistente no WhatsApp que consulta informações do sistema e executa operações autorizadas.",
   },
   {
     icon: "integration",
+    slug: "integracao-de-sistemas-e-apis",
     title: "Integrações e evolução",
     text: "Conexão entre plataformas, desenvolvimento de APIs, modernização de aplicações existentes e melhoria de processos técnicos.",
     example: "Integrar um sistema de gestão a um canal de atendimento e eliminar a duplicação de dados.",
@@ -129,6 +134,10 @@ export const faq = [
   {
     q: "Vocês oferecem suporte depois da entrega?",
     a: "Sim, quando contratado. Oferecemos manutenção, correções e desenvolvimento de novas funcionalidades conforme o negócio cresce. As condições ficam definidas em contrato.",
+  },
+  {
+    q: "Vocês atendem empresas de todo o Brasil?",
+    a: "Sim. O trabalho é remoto: reuniões por vídeo, acompanhamento das entregas online e contato direto pelo WhatsApp. Atendemos empresas de qualquer cidade do país.",
   },
   {
     q: "Atendem empresas de qualquer porte?",

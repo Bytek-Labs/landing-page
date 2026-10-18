@@ -6,13 +6,14 @@ export function Hero() {
       <div className="grid-bg" aria-hidden="true" />
       <div className="container hero__inner">
         <div className="hero__copy">
-          <p className="eyebrow">Bytek Labs · Software &amp; Tecnologia</p>
           <h1>
+            <span className="eyebrow">Desenvolvimento de software, automação e IA</span>
             Tecnologia sob medida para <span className="accent">desafios reais.</span>
           </h1>
           <p className="lead">
             Desenvolvemos sistemas, aplicações web e automações inteligentes que ajudam empresas a
-            simplificar processos, conectar operações e transformar ideias em produtos digitais.
+            simplificar processos, conectar operações e transformar ideias em produtos digitais. Atendemos
+            empresas de todo o Brasil.
           </p>
           <div className="hero__actions">
             <a href="#contato" className="btn btn--primary">

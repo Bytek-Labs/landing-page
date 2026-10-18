@@ -21,6 +21,10 @@ export function About() {
             Além das soluções sob medida, criamos nossos próprios produtos, explorando oportunidades em que a
             tecnologia pode tornar atividades complexas mais simples e acessíveis.
           </p>
+          <p>
+            Trabalhamos de forma remota e atendemos empresas de todo o Brasil, com reuniões por vídeo,
+            entregas acompanhadas online e contato direto com quem desenvolve.
+          </p>
         </div>
 
         <ul className="values">
