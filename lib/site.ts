@@ -1,6 +1,6 @@
 // Endereço público do site, usado nas metatags, no sitemap e no robots.txt.
-// Defina SITE_URL nas variáveis de build da Cloudflare com a URL pública do site.
-const siteUrl = (process.env.SITE_URL ?? process.env.CF_PAGES_URL ?? "http://localhost:3000").replace(/\/$/, "");
+// Ao trocar de domínio, mude aqui (ou defina SITE_URL nas variáveis de build).
+const siteUrl = (process.env.SITE_URL ?? "https://byteklabs.pages.dev").replace(/\/$/, "");
 
 // Dados da marca e de contato.
 export const site = {

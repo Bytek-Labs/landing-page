@@ -43,7 +43,7 @@ Projeto `byteklabs` no Pages (configuração em `wrangler.toml`). Cada push na `
 4. Variáveis de ambiente:
    - `NODE_VERSION` = `24`
    - `PNPM_VERSION` = `12.14.0`
-   - `SITE_URL` = `https://byteklabs.pages.dev` (ou o domínio próprio, quando houver)
+   - `SITE_URL` = só se o endereço for diferente de `https://byteklabs.pages.dev` (o padrão em `lib/site.ts`)
    - `GOOGLE_SITE_VERIFICATION` = código da verificação por meta tag do Google Search Console (opcional)
 
 ### Pela linha de comando
