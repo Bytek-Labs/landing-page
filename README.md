@@ -1,6 +1,6 @@
 # Bytek Labs — landing page
 
-Site institucional da Bytek Labs. Next.js 16 (App Router) exportado como site estático e publicado na Cloudflare (Workers com arquivos estáticos).
+Site institucional da Bytek Labs. Next.js 16 (App Router) exportado como site estático e publicado no Cloudflare Pages: https://byteklabs.pages.dev
 
 ## Rodando localmente
 
@@ -27,22 +27,22 @@ pnpm dev --hostname 0.0.0.0     # para abrir pelo celular na mesma rede
 - **Estilos:** `app/globals.css`
 - **Logo e ícones:** `public/bytek-symbol.png`, `app/icon.png`, `app/apple-icon.png`, `app/opengraph-image.jpg`
 
-## Deploy na Cloudflare
+## Deploy no Cloudflare Pages
 
-O site é publicado como um Worker que serve os arquivos estáticos de `out/` (configuração em `wrangler.toml`).
+Projeto `byteklabs` no Pages (configuração em `wrangler.toml`). Cada push na `main` publica o site.
 
-### Pelo GitHub (deploy automático a cada push na `main`)
+### Configuração do projeto (feita uma vez no painel)
 
-1. No Cloudflare: **Workers & Pages → Create → Import a repository** e escolha `Bytek-Labs/landing-page`.
-2. Configuração do build:
+1. **Workers & Pages → Create → Pages → Import an existing Git repository** e escolha `Bytek-Labs/landing-page`.
+2. Project name: `byteklabs` (igual ao `name` do `wrangler.toml`).
+3. Build:
+   - Framework preset: **None**
    - Build command: `pnpm build`
-   - Deploy command: `npx wrangler deploy`
-3. Variáveis de **build** (Settings → Build → Variables and secrets):
+   - Build output directory: `out`
+4. Variáveis de ambiente:
    - `NODE_VERSION` = `24`
    - `PNPM_VERSION` = `12.14.0`
-   - `SITE_URL` = domínio final, ex. `https://byteklabs.com.br` (quando tiver)
-
-O `name` em `wrangler.toml` precisa ser igual ao nome do Worker no painel.
+   - `SITE_URL` = `https://byteklabs.pages.dev` (ou o domínio próprio, quando houver)
 
 ### Pela linha de comando
 
@@ -53,15 +53,12 @@ pnpm cf:deploy
 
 ### Domínio próprio
 
-No Worker: **Settings → Domains & Routes → Add → Custom domain**. Depois defina `SITE_URL` com esse domínio e faça um novo deploy, para que metatags, `sitemap.xml` e `robots.txt` apontem para ele.
-
-### Sobre o `SITE_URL`
-
-Sem `SITE_URL`, o build usa `http://localhost:3000` nas metatags, então defina a variável assim que souber a URL pública (o `*.workers.dev` do Worker serve enquanto não houver domínio).
+No projeto do Pages: **Custom domains → Set up a custom domain**. Depois atualize `SITE_URL` e faça um novo deploy, para que metatags, `sitemap.xml` e `robots.txt` apontem para ele.
 
 ## O que já está configurado
 
 - `output: "export"`: site 100% estático, sem servidor
 - `public/_headers`: cabeçalhos de segurança e cache longo para `/_next/static/*`
-- `wrangler.toml`: Worker servindo `out/`, com a página `404.html` para rotas inexistentes
+- `wrangler.toml`: projeto do Pages publicando `out/`
+- `404.html` gerado no build (o Pages usa para rotas inexistentes)
 - `robots.txt`, `sitemap.xml`, favicon, ícone Apple e imagem de compartilhamento (Open Graph)

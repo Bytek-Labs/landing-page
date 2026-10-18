@@ -1,8 +1,5 @@
-# Cloudflare Workers com arquivos estáticos (o site é exportado em out/).
-# O nome precisa ser igual ao do Worker criado no painel da Cloudflare.
-name = "landing-page"
+# Cloudflare Pages: o site é exportado em out/.
+# O name precisa ser igual ao nome do projeto no Pages.
+name = "byteklabs"
+pages_build_output_dir = "out"
 compatibility_date = "2026-10-01"
-
-[assets]
-directory = "./out"
-not_found_handling = "404-page"
