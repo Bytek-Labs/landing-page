@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { StructuredData } from "@/components/StructuredData";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -15,18 +16,31 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+const title = "Software sob medida, automação e IA | Bytek Labs";
 const description =
-  "Consultoria independente de tecnologia. Desenvolvemos sistemas sob medida, aplicações web, automações e integrações para resolver problemas reais de negócio.";
+  "Consultoria de tecnologia que desenvolve sistemas sob medida, sites, automações e integrações com IA para pequenas e médias empresas.";
 
 const revealGuard = `(function(d){d.classList.add('js');setTimeout(function(){if(!d.dataset.reveal)d.classList.remove('js')},3000)})(document.documentElement)`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "Bytek Labs · Software, automação e IA sob medida",
+  title,
   description,
+  applicationName: site.name,
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  // Código de verificação do Google Search Console (variável de build GOOGLE_SITE_VERIFICATION)
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: "/",
     siteName: site.name,
     title: "Bytek Labs · Tecnologia sob medida para desafios reais",
     description:
@@ -48,7 +62,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             iniciar em 3s (script bloqueado, rede lenta), mostra tudo sem animação. */}
         <script dangerouslySetInnerHTML={{ __html: revealGuard }} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <StructuredData />
+      </body>
     </html>
   );
 }

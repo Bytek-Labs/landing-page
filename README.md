@@ -43,6 +43,7 @@ Projeto `byteklabs` no Pages (configuração em `wrangler.toml`). Cada push na `
    - `NODE_VERSION` = `24`
    - `PNPM_VERSION` = `12.14.0`
    - `SITE_URL` = `https://byteklabs.pages.dev` (ou o domínio próprio, quando houver)
+   - `GOOGLE_SITE_VERIFICATION` = código da verificação por meta tag do Google Search Console (opcional)
 
 ### Pela linha de comando
 
@@ -61,4 +62,5 @@ No projeto do Pages: **Custom domains → Set up a custom domain**. Depois atual
 - `public/_headers`: cabeçalhos de segurança e cache longo para `/_next/static/*`
 - `wrangler.toml`: projeto do Pages publicando `out/`
 - `404.html` gerado no build (o Pages usa para rotas inexistentes)
-- `robots.txt`, `sitemap.xml`, favicon, ícone Apple e imagem de compartilhamento (Open Graph)
+- SEO: título e descrição, URL canônica, `robots.txt`, `sitemap.xml`, imagem de compartilhamento (Open Graph) e dados estruturados schema.org (`components/StructuredData.tsx`)
+- Favicon e ícone Apple
