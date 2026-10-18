@@ -1,5 +1,5 @@
 // Endereço público do site, usado nas metatags, no sitemap e no robots.txt.
-// Defina SITE_URL no Cloudflare Pages quando tiver o domínio; até lá vale a URL do deploy.
+// Defina SITE_URL nas variáveis de build da Cloudflare com a URL pública do site.
 const siteUrl = (process.env.SITE_URL ?? process.env.CF_PAGES_URL ?? "http://localhost:3000").replace(/\/$/, "");
 
 // Dados da marca e de contato.

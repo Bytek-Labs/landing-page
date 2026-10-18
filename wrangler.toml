@@ -1,4 +1,8 @@
-# Deploy direto pela linha de comando: pnpm pages:deploy
-name = "bytek-labs"
-pages_build_output_dir = "out"
+# Cloudflare Workers com arquivos estáticos (o site é exportado em out/).
+# O nome precisa ser igual ao do Worker criado no painel da Cloudflare.
+name = "landing-page"
 compatibility_date = "2026-10-01"
+
+[assets]
+directory = "./out"
+not_found_handling = "404-page"

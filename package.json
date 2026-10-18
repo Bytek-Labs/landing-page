@@ -7,7 +7,7 @@
     "build": "next build",
     "preview": "npx serve@latest out",
     "typecheck": "next typegen && tsc --noEmit",
-    "pages:deploy": "next build && npx wrangler@latest pages deploy"
+    "cf:deploy": "next build && npx wrangler@latest deploy"
   },
   "dependencies": {
     "next": "^16.4.2",
