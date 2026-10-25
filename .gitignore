@@ -5,3 +5,7 @@ next-env.d.ts
 *.tsbuildinfo
 .DS_Store
 .wrangler/
+
+# Estratégia interna e configurações locais do Claude Code
+.claude/brand-brief.md
+.claude/settings.local.json
