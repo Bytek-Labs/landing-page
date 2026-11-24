@@ -99,7 +99,7 @@ export default function TermsPage() {
       <h2>10. Legislação e foro</h2>
       <p>
         Estes Termos são regidos pelas leis brasileiras. Quando o contratante for consumidor, fica eleito
-        o foro do seu domicílio; nos demais casos, o foro do domicílio do prestador.
+        o foro do seu domicílio; nos demais casos, o foro da comarca de Mirandópolis/SP.
       </p>
 
       <h2>11. Contato</h2>
