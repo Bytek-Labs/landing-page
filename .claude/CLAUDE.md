@@ -20,7 +20,7 @@ Para testar no celular: `pnpm dev --hostname 0.0.0.0` (IPs da rede local liberad
 
 - Comunicar problema → solução → tecnologia, nessa ordem. Nada de lista enorme de frameworks.
 - Não inventar clientes, depoimentos, números, cases ou resultados. Não prometer prazos, primeira página no Google ou que IA substitui pessoas.
-- Produtos com estágio real: ByMec = "MVP em fase final" (`stage: 2`), Byllio = "Em desenvolvimento" (`stage: 1`); Toninho (assistente WhatsApp do ByMec) é "planejado". As prévias animadas dos produtos são marcadas como "ilustração" e usam dados fictícios.
+- Produtos com estágio real: Gestão para lojas = "MVP em validação" (`stage: 2`; nasceu de projeto sob medida para um cliente, sem citar o nome; Pix integrado/subcontas é "planejado"), ByMec = "MVP em fase final" (`stage: 2`), Byllio = "Em desenvolvimento" (`stage: 1`); Toninho (assistente WhatsApp do ByMec) é "planejado". As prévias animadas dos produtos são marcadas como "ilustração" e usam dados fictícios.
 - CNPJ 70.270.512/0001-53 (titular Guilherme Golfeto Francisco) aparece no rodapé, nos Termos e na Política (dados em `lib/site.ts`). Não afirmar estrutura que não existe (equipe, sócios). Tom: consultoria independente, enxuta, contato direto com quem desenvolve. Atende o Brasil todo, remoto.
 - Seção "Projetos/cases" foi deixada de fora de propósito até existirem projetos reais (comentário em `app/page.tsx`).
 

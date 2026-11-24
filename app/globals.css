@@ -251,12 +251,12 @@ p { margin: 0; }
 .step p { color: var(--text-dim); font-size: 0.92rem; }
 
 /* Produtos */
-.products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 /* subgrid: prévia, título, texto, linha do tempo e nota alinham entre os cards */
 .product {
-  display: grid; grid-row: span 5; grid-template-rows: subgrid; gap: 20px; align-content: start;
+  display: grid; grid-row: span 5; grid-template-rows: subgrid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-content: start;
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 32px;
+  padding: 28px;
 }
 .product > p { color: var(--text-dim); }
 .product__top { display: flex; flex-direction: column; align-items: flex-start; }
@@ -537,6 +537,8 @@ p { margin: 0; }
   .footer__about { grid-column: 1 / -1; }
   .deliverables { --cols: 2 !important; }
   .related { grid-template-columns: 1fr; }
+  /* 3 cards não cabem lado a lado; empilhados para não sobrar um sozinho */
+  .products { grid-template-columns: 1fr; max-width: 640px; }
 }
 
 @media (max-width: 680px) {

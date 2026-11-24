@@ -92,6 +92,18 @@ export const steps = [
 
 export const products = [
   {
+    name: "Gestão para lojas",
+    tagline: "Caixa, estoque e vendas para lojas físicas",
+    status: { label: "MVP em validação", tone: "near" },
+    stage: 2,
+    text: "Sistema para lojas físicas de pequeno porte, no celular e no computador: caixa (PDV) com leitura de código de barras, catálogo e estoque, fiado e crediário, encomendas, financeiro e vitrine online com link para o Instagram. Nasceu de um projeto sob medida para uma loja real.",
+    note: {
+      label: "planejado",
+      highlight: "Pix integrado",
+      text: ", com pagamentos processados por uma operadora parceira e cada loja recebendo o valor das próprias vendas numa subconta em seu nome.",
+    },
+  },
+  {
     name: "ByMec",
     tagline: "Gestão para oficinas mecânicas",
     status: { label: "MVP em fase final", tone: "near" },

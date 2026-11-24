@@ -59,7 +59,22 @@ export default function TermsPage() {
         pelo intermediador, conforme as políticas dele; a {site.name} não armazena dados de cartão.
       </p>
 
-      <h2>6. Cancelamento e reembolso</h2>
+      <h2>6. Pagamentos nas plataformas da Bytek Labs</h2>
+      <p>
+        Em algumas soluções da {site.name}, como a plataforma de gestão para lojas, os pagamentos via Pix
+        são processados por uma operadora de pagamentos parceira, autorizada a operar no Brasil.
+      </p>
+      <ul>
+        <li>
+          Cada lojista cliente recebe os valores das próprias vendas numa subconta em seu nome. A{" "}
+          {site.name} não recebe nem guarda os valores das vendas dos lojistas.
+        </li>
+        <li>A {site.name} cobra do lojista uma taxa por transação, conforme o contrato firmado com cada cliente.</li>
+        <li>Devoluções e estornos seguem as regras da operadora de pagamentos e o contrato com o lojista.</li>
+        <li>Dúvidas sobre uma compra feita numa loja devem ser tratadas primeiro com a própria loja.</li>
+      </ul>
+
+      <h2>7. Cancelamento e reembolso</h2>
       <p>
         Quando o contratante for consumidor e a contratação ocorrer a distância, é garantido o direito de
         arrependimento em até 7 (sete) dias a contar da contratação, nos termos do art. 49 do Código de
@@ -72,14 +87,14 @@ export default function TermsPage() {
         reembolso podem ser feitos pelo e-mail <a href={`mailto:${site.email}`}>{site.email}</a>.
       </p>
 
-      <h2>7. Propriedade intelectual</h2>
+      <h2>8. Propriedade intelectual</h2>
       <p>
         Os textos, a marca, o logotipo e os elementos visuais deste site pertencem à {site.name} e não
         podem ser reproduzidos sem autorização. A titularidade e a licença de uso do código e dos materiais
         produzidos em cada projeto são definidas na respectiva proposta ou contrato.
       </p>
 
-      <h2>8. Responsabilidades</h2>
+      <h2>9. Responsabilidades</h2>
       <p>
         A {site.name} se empenha para manter as informações do site corretas e atualizadas, mas elas podem
         mudar sem aviso prévio. O site pode conter links para serviços de terceiros (como WhatsApp e
@@ -90,19 +105,19 @@ export default function TermsPage() {
         manutenção, falhas de provedores ou eventos fora do seu controle.
       </p>
 
-      <h2>9. Alterações</h2>
+      <h2>10. Alterações</h2>
       <p>
         Estes Termos podem ser atualizados a qualquer momento. A data da última atualização fica indicada
         no topo desta página. Contratos em andamento continuam regidos pelas condições acordadas.
       </p>
 
-      <h2>10. Legislação e foro</h2>
+      <h2>11. Legislação e foro</h2>
       <p>
         Estes Termos são regidos pelas leis brasileiras. Quando o contratante for consumidor, fica eleito
         o foro do seu domicílio; nos demais casos, o foro da comarca de Mirandópolis/SP.
       </p>
 
-      <h2>11. Contato</h2>
+      <h2>12. Contato</h2>
       <p>
         Dúvidas sobre estes Termos podem ser enviadas para{" "}
         <a href={`mailto:${site.email}`}>{site.email}</a> ou pelo WhatsApp{" "}

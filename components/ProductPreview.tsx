@@ -23,6 +23,12 @@ const byllioInvoices = [
   { client: "Globex LLC", usd: 2400 },
 ];
 
+const storeSales = [
+  { item: "Camiseta básica M", channel: "Caixa", value: 59.9 },
+  { item: "Calça jeans 40", channel: "Encomenda", value: 149.9 },
+  { item: "Vestido midi P", channel: "Caixa", value: 189 },
+];
+
 const RATE = 5.4; // câmbio ilustrativo
 
 const usd = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD" });
@@ -132,6 +138,43 @@ function ByllioPreview() {
   );
 }
 
-export function ProductPreview({ product }: { product: "ByMec" | "Byllio" }) {
-  return product === "ByMec" ? <BymecPreview /> : <ByllioPreview />;
+function StorePreview() {
+  const { ref, tick } = useTicker(1700);
+  // Os pagamentos Pix vão sendo confirmados um a um; depois de uma pausa, o ciclo recomeça.
+  const phase = tick % (storeSales.length + 2);
+  const paid = storeSales.slice(0, Math.min(phase, storeSales.length));
+  const total = paid.reduce((sum, s) => sum + s.value, 0);
+
+  return (
+    <div ref={ref} className="preview-wrap">
+      <Window title="loja · vendas">
+        <ul className="preview__list">
+          {storeSales.map((s, i) => {
+            const done = i < phase;
+            return (
+              <li key={s.item} className="preview__row">
+                <div>
+                  <b>{s.item}</b>
+                  <span>{s.channel} · {brl(s.value)}</span>
+                </div>
+                <span key={String(done)} className={`tag ${done ? "tag--ok" : "tag--muted"}`}>
+                  {done ? "Pix recebido" : "pendente"}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="preview__total">
+          <span>Recebido hoje</span>
+          <b key={total}>{brl(total)}</b>
+        </div>
+      </Window>
+    </div>
+  );
+}
+
+export function ProductPreview({ product }: { product: "Gestão para lojas" | "ByMec" | "Byllio" }) {
+  if (product === "ByMec") return <BymecPreview />;
+  if (product === "Byllio") return <ByllioPreview />;
+  return <StorePreview />;
 }
