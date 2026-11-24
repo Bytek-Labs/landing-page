@@ -24,6 +24,8 @@ export function organizationGraph(): Thing[] {
       description:
         "Consultoria independente de tecnologia: sistemas sob medida, sites e aplicações web, automação, inteligência artificial e integração de sistemas.",
       email: site.email,
+      taxID: site.cnpj,
+      founder: { "@type": "Person", name: site.responsible },
       telephone: `+${site.whatsapp}`,
       areaServed: { "@type": "Country", name: "Brasil" },
       knowsLanguage: "pt-BR",

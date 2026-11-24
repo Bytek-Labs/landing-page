@@ -29,6 +29,12 @@
 
 - Wallpapers da marca em `~/Pictures/Bytek Labs/` (MacBook 2560×1664, monitor 3840×2160, celular 1290×2796).
 
+## 23/11/2026 — requisitos da AbacatePay
+
+- AbacatePay exige: CNPJ válido, site no ar com contato, termos de uso, política de privacidade e CNPJ no rodapé.
+- Criadas `/termos-de-uso/` (inclui direito de arrependimento do CDC, art. 49, e pagamento via intermediador) e `/politica-de-privacidade/` (LGPD: controlador, bases legais, compartilhamento com Cloudflare/WhatsApp/Google/AbacatePay, direitos do titular).
+- Rodapé: CNPJ, telefone visível e links legais; contato mostra o telefone; JSON-LD ganhou `taxID`.
+
 ## Pendências e próximos passos
 
 - Domínio próprio (ex.: byteklabs.com.br) → adicionar no Pages e trocar `site.url`/`SITE_URL`.

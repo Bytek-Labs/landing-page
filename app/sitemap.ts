@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { servicePages, servicePath } from "@/lib/service-pages";
-import { site } from "@/lib/site";
+import { legalLinks, site } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -11,6 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${site.url}${servicePath(p.slug)}`,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...legalLinks.map((l) => ({
+      url: `${site.url}${l.href}`,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
     })),
   ];
 }

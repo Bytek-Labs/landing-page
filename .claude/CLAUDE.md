@@ -10,6 +10,7 @@ Publicado em https://byteklabs.pages.dev · repositório público `Bytek-Labs/la
 - `lib/site.ts`: contatos, textos da home, serviços, produtos, FAQ, `site.url` (padrão `https://byteklabs.pages.dev`, sobrescrito por `SITE_URL`).
 - `lib/service-pages.ts`: conteúdo das páginas `/servicos/<slug>/` (uma por termo de busca). Página nova entra sozinha no sitemap, rodapé e dados estruturados.
 - `components/`: uma seção por arquivo. Cabeçalho, rodapé e efeitos ficam no `app/layout.tsx` (todas as páginas).
+- `/termos-de-uso/` e `/politica-de-privacidade/` (`components/LegalPage.tsx`): exigidos pela AbacatePay junto com contato e CNPJ no rodapé. Não remover. Ao mudar o texto, atualizar `legalUpdated`.
 - `components/StructuredData.tsx`: JSON-LD (ProfessionalService + WebSite em todas as páginas; FAQPage na home; Service + BreadcrumbList + FAQPage nas de serviço).
 
 Comandos: `pnpm dev` · `pnpm build` · `pnpm typecheck` · `pnpm cf:deploy` (build + `wrangler pages deploy`).
@@ -20,7 +21,7 @@ Para testar no celular: `pnpm dev --hostname 0.0.0.0` (IPs da rede local liberad
 - Comunicar problema → solução → tecnologia, nessa ordem. Nada de lista enorme de frameworks.
 - Não inventar clientes, depoimentos, números, cases ou resultados. Não prometer prazos, primeira página no Google ou que IA substitui pessoas.
 - Produtos com estágio real: ByMec = "MVP em fase final" (`stage: 2`), Byllio = "Em desenvolvimento" (`stage: 1`); Toninho (assistente WhatsApp do ByMec) é "planejado". As prévias animadas dos produtos são marcadas como "ilustração" e usam dados fictícios.
-- Não afirmar estrutura que não existe (equipe, CNPJ, sócios). Tom: consultoria independente, enxuta, contato direto com quem desenvolve. Atende o Brasil todo, remoto.
+- CNPJ 70.270.512/0001-53 (titular Guilherme Golfeto Francisco) aparece no rodapé, nos Termos e na Política (dados em `lib/site.ts`). Não afirmar estrutura que não existe (equipe, sócios). Tom: consultoria independente, enxuta, contato direto com quem desenvolve. Atende o Brasil todo, remoto.
 - Seção "Projetos/cases" foi deixada de fora de propósito até existirem projetos reais (comentário em `app/page.tsx`).
 
 ## Identidade visual

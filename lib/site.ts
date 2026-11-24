@@ -8,7 +8,17 @@ export const site = {
   url: siteUrl,
   whatsapp: "5513991082474", // DDI + DDD + número, só dígitos
   email: "golfeto.dev@gmail.com",
+  phone: "(13) 99108-2474", // exibição
+  // Dados do responsável legal (exigidos por intermediadores de pagamento, ex.: AbacatePay)
+  responsible: "Guilherme Golfeto Francisco",
+  cnpj: "70.270.512/0001-53",
 };
+
+// Páginas legais, linkadas no rodapé e incluídas no sitemap.
+export const legalLinks = [
+  { href: "/termos-de-uso/", label: "Termos de uso" },
+  { href: "/politica-de-privacidade/", label: "Política de privacidade" },
+];
 
 export const whatsappLink = (text?: string) =>
   `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;

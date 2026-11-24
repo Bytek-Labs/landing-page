@@ -21,7 +21,7 @@ export function Contact() {
                 target="_blank"
                 rel="noopener"
               >
-                Abrir conversa
+                {site.phone}
               </a>
             </li>
             <li>
